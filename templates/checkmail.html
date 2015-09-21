@@ -1,0 +1,55 @@
+<{include file="header.html"}>
+
+
+       	<div id="Layer">您的位置是：確認Mail</div>
+        <div id="Time"> </div>
+       
+        <!-- 內容區 Start-->
+       
+ <div id="tab">
+        	<div class="title">&middot; 確認Mail</div>
+            <div class="btn2">
+<!--            
+            <input name='button3' type='submit' class='button3' id='button3' onclick="location.href='default.php?funitemid=1&do=2&page=1'" value='新增帳號' />
+-->
+            </div>
+<form action="checkmail.php?op=1" method="post">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+   
+    <th width="100%">姓名：{$uname}  認證url：{$url}  註冊者mail：{$umail}</th>
+    
+  </tr>
+  
+
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   
+    <td>
+	  <p>信件主旨：<input type="text" name="title" id="title" size="40" value="<{$title}>" /></p>
+		<p>
+			<textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="10">
+			
+			<{$content}>
+			
+			</textarea>
+		</p>
+		<p>
+			
+		</p>
+	
+	</td>
+
+  </tr>
+
+  <tr>
+
+    <th class="tabfooter" colspan="6" style="border-left:0px;"> 
+      
+		<input type="submit" value="送出" />
+ 
+    </th>
+    </tr>
+</table>
+</form>  
+<{include file="footer.html"}>

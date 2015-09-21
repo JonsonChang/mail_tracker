@@ -1,0 +1,122 @@
+<{include file="header.html"}>
+<script>
+$(function(){
+	init_subcriber_edit();
+});
+</script>
+
+       	<div id="Layer">您的位置是：修改訂閱者</div>
+        <div id="Time"> </div>
+       
+        <!-- 內容區 Start-->
+       
+ <div id="tab">
+        	<div class="title">&middot; 修改訂閱者</div>
+            <div class="btn2">
+<!--           
+            <input name='button3' type='submit' class='button3' id='button3' onclick="location.href='news_add.php'" value='新增最新消息' />
+-->
+            </div>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+   
+    <th width="15%">項目</th>
+	<th width="85%">名稱：</th>
+    
+  </tr>
+
+<form action="subscriber_list.php?op=5" method="post">  
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   姓名：
+   </td>
+    <td>
+		<p align="left">
+			<input name="name" type="text" id="name" size="20" maxlength="20" value="<{$subscriber.name}>"/>
+		</p>
+	</td>
+
+  </tr>
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   E-mail:
+   </td>
+    <td>
+		<p align="left">
+			<input name="email" type="text" id="email" size="50" maxlength="60" value="<{$subscriber.Email}>" />
+			<input name="id" type="hidden" id="id" size="50" maxlength="60" value="<{$subscriber.Email}>" />
+		</p>
+	</td>
+  </tr>
+
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   地址:
+   </td>
+    <td>
+		<p align="left">
+			<input name="address" type="text" id="address" size="50" maxlength="60" value="<{$subscriber.address}>" />
+		</p>
+	</td>
+  </tr>
+
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   Blog:
+   </td>
+    <td>
+		<p align="left">
+			<input name="blog" type="text" id="blog" size="50" maxlength="60" value="<{$subscriber.blog}>" />
+		</p>
+	</td>
+  </tr>  
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   啟用時間:
+   </td>
+    <td>
+		<p align="left">
+			<input name="activedate" type="text" id="activedate" size="50" maxlength="60" value="<{$subscriber.activedate}>" />
+			<button type="button" id='subscriber_edit_now' value="" >現在時間</button>
+		</p>
+	</td>
+  </tr>  
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   啟用
+   </td>
+    <td>
+		<p align="left">
+			  <input name="active" type="checkbox" id="active" value="1" <{if $subscriber.active==1}>checked="checked" <{/if}> />
+		</p>
+	</td>
+  </tr>
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   使用者取消
+   </td>
+      <td>
+		<p align="left">
+			  <input name="user_disable" type="checkbox" id="user_disable" value="1" <{if $subscriber.user_disable==1}>checked="checked" <{/if}> />
+		</p>
+	</td>
+
+  </tr>  
+
+
+
+
+  <tr>
+
+    <th class="tabfooter" colspan="6" style="border-left:0px;"> 
+      
+		<input type="submit" value="送出" title="送出" />
+ 
+    </th>
+    </tr>
+	</form>  
+</table>
+
+<{include file="footer.html"}>

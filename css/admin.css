@@ -1,0 +1,368 @@
+@charset "utf-8";
+
+body{
+	font-size:90%;
+	background-color:#1b1b1b;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin:0;
+	color: #F0F0F0;
+}
+
+b{	display: none;}
+p{margin:0px;padding:0}
+.clear{clear:both}
+h1{font-size:100%}
+h2{font-size:90%}
+h3{font-size:80%}
+h4{font-size:75%}
+a:link{ color:#535353; text-decoration:none;}
+a:hover{ color:#ff8000;}
+#All{
+	background: url(../images/BgMain2.jpg) repeat-x;
+	width: 100%;
+}
+#Left {
+	height:auto;
+	float:left;
+	background: url(../images/BgMenu.jpg) repeat-y;
+	width: 190px;
+}
+#Logo{	background: url(../images/BgLeftLogo.jpg) repeat-x;	height: 122px;width: 189px;}
+#Logo .CompanyLogo{	width:189px;height:70px;text-align: center;	padding-top: 10px;}
+#Logo .MS{
+	background-image: url(../images/LeftMS.png);
+	background-repeat: no-repeat;
+	height: 32px;
+	width: 131px;
+	float: left;
+	margin-left: 28px;
+	_margin-left: 14px;
+}
+#Main .btn{	float:left;	margin-left: 5px;}
+#Main .btn input{font-size: 75%;}
+#Bottom{
+	background: url(../images/BgMenuBottom.jpg) no-repeat 0 0;
+	height: 50px;
+	width: 189px;
+	float: left;
+}/*選單圓弧*/
+#Time{
+	font-size: 80%;
+	height: 18px;
+	color: #FFFFFF;
+	width: 25%;
+	float: right;
+	clear: right;
+	margin: 14px 10px 0 0;
+	padding-top: 0px;
+	*padding-top: 8px;
+	text-align: right;
+}
+#Main{	height:auto;float: left;background: url(../images/BgMain.jpg)  no-repeat right top;	width: 100%;}
+#Main .Welcome{	font-size: 75%;	float: left;margin: 4px 0 10px 10px;}
+#Main .KeyWord{
+	float:right;
+	font-size: 75%;
+	margin: 4px 10px 0 0;
+	color: #bbbbbb;
+}
+#Main .KeyWord a,#Main .KeyWord a:link,#Main .KeyWord a:visited{color: #FFFFFF;	text-decoration: none;}
+#Main .KeyWord a:hover,#Main .KeyWord a:active{
+	color: #FFCC00;
+	text-decoration: underline;
+}
+#Layer{
+	background: url(../images/icon03.png) no-repeat 0 0;
+	float: left;
+	height: 28px;
+	width: 68%;
+	font-size: 75%;
+	margin-top: 8px;
+	margin-left: 10px;
+	padding-top: 6px;
+	padding-left: 33px;
+	clear: both;
+}
+#Layer a,#Main .KeyWord a:link,#Layer a:visited{color: #FFFFFF;	text-decoration: none;}
+#Layer a,#Main .KeyWord a:hover,#Layer a:active{color: #FFCC00;}
+#Layer a:hover,#Layer a:active{
+	color: #FFCC00;
+	text-decoration: underline;
+}
+#Login{
+	background: url(../images/BgLogin.jpg) no-repeat 0 0;
+	width:100%;
+	height:500px;
+	clear: both;
+	padding-top: 80px;
+}
+#Login .bg{
+	background: url(../images/Login.png) no-repeat 0 0;
+	width:241px;
+	height:150px;
+	clear: both;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 100px;
+	padding-left: 180px;
+}
+#Login .bg p{
+	width:200px;
+	height:26px;
+	color:#624A13;
+	font-size:90%;
+	float:left;
+}
+#Login .bg span{line-height:20px;*line-height:26px;float:left;}
+#Login .bg input{
+	width:130px;
+	height:18px;
+	float:left;
+	border: 1px solid #a18a56;
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+}
+#Login em{
+	width:100%;
+	height:auto;
+	font-size: 75%;
+	font-style: normal;
+	margin: 40px auto 0 auto;
+	clear: both;
+	display: block;
+	text-align: center;
+	letter-spacing: 0.1em;	
+}
+#Login em span{color:#a18a56}
+#Login em a{color:#a18a56}
+#Search{
+	width:100%;
+	clear: both;
+	margin: 7px auto 0 auto;
+	padding:10px 0 0 0;
+
+
+
+
+
+	*padding:0;
+	text-align: center;
+	font-size: 80%;
+	height: 35px;
+
+
+
+
+
+	*height:44px;
+	float: left;
+}
+#Search span{padding-left:10px;}
+a.enter:link,a.enter:visited{
+	width:186px;
+	height:34px;
+	display: block;
+	margin-top:10px;
+	background: url(../images/BtEnter.png) no-repeat 0px 0px;
+	_background-image: none;
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/BtEnter.png', sizingMethod='crop');
+}
+a.enter:hover,a.enter:active{
+	background: url(../images/BtEnterOn.png) no-repeat 0px 0px;
+	_background-image: none;
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/BtEnterOn.png', sizingMethod='crop');
+	cursor: hand;
+}
+/*內容區*/
+#tab{
+	float:left;
+	width:100%;
+	height:auto;
+}
+#tab .btn2{
+	font-size:100%;
+	width:70%;
+	*width:75%;
+	float: left;
+	text-align: right;
+	height: 24px;
+	background-image: url(../images/TabTitleBg.jpg);
+	background-repeat: repeat-x;
+}
+#tab .btn2 span{
+	font-size:85%;
+	color:#535353;
+	width: 105px;
+	margin: 0 10px 0 0;
+}
+#tab .btn2 input{
+	font-size:85%;
+	margin:2px 5px 0 0;
+	*margin:2px 5px 0 0;		
+	height:20px;
+}
+#tab .btn2 select {
+	font-size:85%;
+	margin:-2px 5px 0 0;
+	*margin:2px 5px 0 0;		
+	height:20px;
+}
+#tab .title{
+	float:left;
+	width:29%;
+
+	*width:23.9%;
+	height:20px;
+	background-image: url(../images/TabTitleBg.jpg);
+	background-repeat: repeat-x;
+	color: #000000;
+	letter-spacing: 0.1em;
+	padding-left: 1%;
+	padding-top: 4px;
+	font-size: 80%;
+}
+#tab table {
+	border-collapse:collapse;
+	clear: both;
+}
+#tab th{
+	background-color:#0a4d6b;
+	font-weight: normal;
+	text-align: center;
+	font-size: 80%;
+	padding: 5px 0;
+	*padding: 8px 0 3px 0;
+	border:#000 solid 1px;
+}
+#tab .tr{
+	background-color:#CCCCCC;
+}
+#tab .trover{background-color:#000}
+#tab td{
+	padding:2px 0;
+	font-size:75%;
+	text-align: center;
+	border-bottom:#000 solid 1px;
+	color: #535353;
+	background-color: #FFFFFF;
+}
+#tab input{font-size: 100%;}
+#tab .tabfooter{background-color:#0a4d6b;text-align: center;}
+#IDdata {
+	float: left;
+	width: 100%;
+	margin: 0;
+}
+.IDdataTable{
+	width:100%;
+	font-size: 85%;
+}
+.IDdataTable2{
+	width:100%;
+	font-size: 85%;
+}
+.IDdataTable2 tr:hover{
+	background-color:#000;
+}
+.TbTitle{
+	font-size: 100%;
+	padding: 5px;
+	background-color: #162C44;
+	font-weight: bold;
+}
+.TbTitle2{
+	font-size: 100%;
+	padding: 5px;
+	width: 33%;
+	text-align: center;
+	background-color: #26486B;
+}
+.TbTitle3{
+	font-size: 100%;
+	padding: 5px;
+	width: 33%;
+	text-align: center;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+	background-color: #201E24;
+}
+.IdTitle {
+	text-align:right;
+	padding: 5px;
+}
+.Information {
+	text-align:left;
+	padding: 5px;
+}
+.Information span{
+	float:left;
+	margin:0 10px 0 0;
+}
+.Information input{
+	margin:3px 5px 0 0;
+	*margin:0px 5px 0 0;
+	float:left;
+}
+#ContactInfor {
+	float: left;
+	width: 100%;
+}
+#ContactInfor th{
+	background-color:#0a4d6b;
+	padding: 5px;
+	text-align:center;
+}
+#ContactInfor td{
+	text-align:center;
+}
+#ContactInfor tr:hover{
+
+}
+.Calendar {
+	background-image: url(../images/icon_calendar.gif);
+	background-repeat: no-repeat;
+	height: 15px;
+	width: 18px;
+	float:left;
+}
+.TbTitle4{
+	font-size: 100%;
+	padding: 5px;
+	text-align: left;
+	border-bottom: 1px solid #000;
+	background-color: #201E24;
+}
+a.PicLink:link,a.PicLink:visited{
+	color:#0000FF;
+	text-decoration:underline;
+}
+a.PicLink:hover,a.PicLink:active{
+	color:#0000FF;
+	text-decoration:underline;
+}
+#All #Main #tab .FlowTitle {
+	float: left;
+	width: 100%;
+	font-weight: bold;
+	text-align: center;
+	height: 25px;
+	background-color: #162c44;
+	line-height: 25px;
+}
+#All #Main #tab .CheckGroup {
+	float: left;
+	width: 100%;
+}
+#All #Main #tab .CheckGroup span {
+	float: left;
+	width: 20%;
+}
+a.Upload:link,a.Upload:visited{
+	color:#0000FF;
+	text-decoration:none;
+}
+.TextAreaSet {
+	float:left;
+	height: 200px;
+	width: 700px;
+}

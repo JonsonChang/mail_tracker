@@ -1,0 +1,80 @@
+<{include file="header.html"}>
+
+       	<div id="Layer">您的位置是：修改文章</div>
+        <div id="Time"> </div>
+       
+        <!-- 內容區 Start-->
+       
+ <div id="tab">
+        	<div class="title">&middot; 修改文章</div>
+            <div class="btn2">
+<!--           
+            <input name='button3' type='submit' class='button3' id='button3' onclick="location.href='news_add.php'" value='新增最新消息' />
+-->
+            </div>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+   
+    <th width="15%">項目</th>
+	<th width="85%">名稱：{$uname}&nbsp;&nbsp; 取消認證url：{$url} &nbsp;&nbsp; mail：{$umail}</th>
+    
+  </tr>
+
+<form action="blog_list.php?op=5&id=<{$id}>" method="post">  
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   發信時間：
+   </td>
+    <td>
+		<p align="left">
+			<input name="sendday" type="text" id="sendday" size="10" maxlength="10" value="<{$article.sendday}>" /> mail認證後幾天，0 為即時寄出
+		</p>
+	</td>
+
+  </tr>
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   名稱
+   </td>
+    <td>
+		<p align="left">
+			<input name="subject" type="text" id="subject" size="50" maxlength="60" value="<{$article.title}>" />
+		</p>
+	</td>
+  </tr>
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   啟用
+   </td>
+    <td>
+		<p align="left">
+			  <input name="active" type="checkbox" id="active" value="1" <{if $article.active==1}>checked="checked" <{/if}> />
+		</p>
+	</td>
+  </tr>  
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   內容
+   </td>
+    <td>
+		<p align="left">
+			<textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="20"><{$article.content}></textarea>
+		</p>
+	</td>
+
+  </tr>  
+
+  <tr>
+    <th class="tabfooter" colspan="6" style="border-left:0px;"> 
+      
+		<input type="submit" value="送出" title="送出" />
+ 
+    </th>
+   </tr>
+	</form>  
+</table>
+
+
+<{include file="footer.html"}>

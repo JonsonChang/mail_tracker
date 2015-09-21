@@ -1,0 +1,167 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.3
+-- http://www.phpmyadmin.net
+-- 
+-- 主機: localhost
+-- 建立日期: Mar 31, 2012, 07:09 AM
+-- 伺服器版本: 5.0.51
+-- PHP 版本: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- 資料庫: `mailtrack`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- 資料表格式： `alread_sent`
+-- 
+
+CREATE TABLE `alread_sent` (
+  `aid` bigint(20) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `open` tinyint(4) NOT NULL,
+  `gid` int(11) NOT NULL,
+  PRIMARY KEY  (`aid`,`email`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- 列出以下資料庫的數據： `alread_sent`
+-- 
+
+INSERT INTO `alread_sent` VALUES (51, 'uaecloug@guerrillamailblock.com', 0, 1);
+INSERT INTO `alread_sent` VALUES (52, 'uaecloug@guerrillamailblock.com', 0, 1);
+INSERT INTO `alread_sent` VALUES (53, 'xnm62018@msb.mailslite.com', 0, 1);
+INSERT INTO `alread_sent` VALUES (51, 'puperchang@gmail.com', 0, 1);
+INSERT INTO `alread_sent` VALUES (52, 'puperchang@gmail.com', 0, 1);
+INSERT INTO `alread_sent` VALUES (53, 'uaecloug@guerrillamailblock.com', 0, 1);
+INSERT INTO `alread_sent` VALUES (53, 'puperchang@gmail.com', 0, 1);
+INSERT INTO `alread_sent` VALUES (53, 'sey99236@msb.mailslite.com', 0, 1);
+INSERT INTO `alread_sent` VALUES (55, 'odw10093@msb.mailslite.com', 0, 7);
+
+-- --------------------------------------------------------
+
+-- 
+-- 資料表格式： `blog_article`
+-- 
+
+CREATE TABLE `blog_article` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `gid` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `sendday` int(11) NOT NULL default '9999',
+  `active` tinyint(4) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=56 ;
+
+-- 
+-- 列出以下資料庫的數據： `blog_article`
+-- 
+
+INSERT INTO `blog_article` VALUES (51, 1, 'adf', '<p>\r\n	ddd</p>\r\n', 12, 1);
+INSERT INTO `blog_article` VALUES (52, 1, 'dd3', '<p>\r\n	dddff</p>\r\n<p>\r\n	ddd</p>\r\n', 1, 1);
+INSERT INTO `blog_article` VALUES (53, 1, '4', '<p>\r\n	名稱：{$uname}&nbsp;&nbsp; 取消認證url：{$url} &nbsp;&nbsp; mail：{$umail}</p>\r\n', 0, 1);
+
+-- --------------------------------------------------------
+
+-- 
+-- 資料表格式： `group`
+-- 
+
+CREATE TABLE `group` (
+  `id` int(11) NOT NULL auto_increment,
+  `gname` varchar(255) NOT NULL,
+  `SMTP_Host` varchar(255) NOT NULL,
+  `SMTP_user_account` varchar(255) NOT NULL,
+  `SMTP_Password` varchar(255) NOT NULL,
+  `SMTP_username` varchar(255) NOT NULL,
+  `SMTP_ReplyMail` varchar(255) NOT NULL,
+  `SMTP_ssl` tinyint(4) NOT NULL default '0',
+  `auth_mail` text,
+  `checkMail` text,
+  `checkTitle` varchar(255) default NULL,
+  `success_url` text,
+  `desc_url` text,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+-- 
+-- 列出以下資料庫的數據： `group`
+-- 
+
+INSERT INTO `group` VALUES (1, '網路中心ppt', 'smtp.gmail.com', 'puperchang@gmail.com', 'puper0317', '張小捲', 'puperchang@gmail.com', 1, NULL, '<p>\r\n	感謝你，請點選認證網址。</p>\r\n<p>\r\n	<span style="font-family: Verdana, Arial, Helvetica, sans-serif; text-align: center; ">姓名：{$uname} </span></p>\r\n<p>\r\n	<span style="font-family: Verdana, Arial, Helvetica, sans-serif; text-align: center; ">認證url：{$url} </span></p>\r\n<p>\r\n	<span style="font-family: Verdana, Arial, Helvetica, sans-serif; text-align: center; ">註冊者mail：{$umail}</span></p>\r\n', '網路中心下戴檔案，確認信', 'http://tw.yahoo.com', 'http://www.google.com');
+INSERT INTO `group` VALUES (2, '銷售課程', 'mail44.rotaryd3480pdgct.org', 'puper44@rotaryd3480pdgct.org', 'puper33', '張小捲22', 'puperchandwweg@gmrrail.com', 1, '555', 'yyy', '333', 'ddd', 'http://yahoo.com.tw');
+
+-- --------------------------------------------------------
+
+-- 
+-- 資料表格式： `singlecontent`
+-- 
+
+CREATE TABLE `singlecontent` (
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  PRIMARY KEY  (`title`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- 列出以下資料庫的數據： `singlecontent`
+-- 
+
+INSERT INTO `singlecontent` VALUES ('checkmail_title', '免費seo 教學');
+INSERT INTO `singlecontent` VALUES ('SMTP_Host', 'mail.rotaryd3480pdgct.org');
+INSERT INTO `singlecontent` VALUES ('SMTP_user_account ', 'puper@rotaryd3480pdgct.org');
+INSERT INTO `singlecontent` VALUES ('SMTP_Password', 'puper');
+INSERT INTO `singlecontent` VALUES ('SMTP_username', '張小捲');
+INSERT INTO `singlecontent` VALUES ('descpage', '<p>\r\n	親愛的朋友您好</p>\r\n<p>\r\n	感謝您的註冊！！</p>\r\n<p>\r\n	系統已自動發送一封郵件到您註冊的信箱，寄件者是：張小捲，主旨為<span style="color: rgb(255, 0, 0);"><span style="font-size: 16px;"><strong>免費SEO課程註冊確認</strong></span></span></p>\r\n<p>\r\n	(如果收件匣裡面沒有看到，有可能被誤判為垃圾信件了，請您到垃圾信件匣找看看)</p>\r\n<p>\r\n	收到信件之後，請您<strong><span style="color: rgb(255, 0, 0);"><span style="font-size: 16px;">點擊信件中的連結</span></span></strong>以確認是您本人註冊的。<br />\r\n	&nbsp;</p>\r\n<p>\r\n	點擊確認完後，系統會自動跳轉到「免費SEO課程的影片網頁」。<br />\r\n	&nbsp;</p>\r\n<p>\r\n	為避免信件掉入垃圾信件匣，確保未來有任何最新的網路行銷資訊都能第一時間讓您收到</p>\r\n<p>\r\n	這邊要麻煩您將 puperchang@gmail.com 加入您的郵件通訊錄。<br />\r\n	　<br />\r\n	&nbsp;</p>\r\n<p>\r\n	謝謝您的配合<br />\r\n	　<br />\r\n	&nbsp;</p>\r\n<p>\r\n	張小捲</p>\r\n');
+INSERT INTO `singlecontent` VALUES ('checkmail', '<p>\r\n	adddcvvsdfsdf</p>\r\n<p>\r\n	姓名：{$uname} 認證url：{$url} 註冊者mail：{$umail}</p>\r\n<p>\r\n	adf</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	確認信 {$url}</p>');
+INSERT INTO `singlecontent` VALUES ('confirmOK_URL', 'http://puperchang.myec.tw/wordpress/');
+INSERT INTO `singlecontent` VALUES ('SMTP_ReplyMail', 'puper@rotaryd3480pdgct.org');
+
+-- --------------------------------------------------------
+
+-- 
+-- 資料表格式： `subscription_user`
+-- 
+
+CREATE TABLE `subscription_user` (
+  `name` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `blog` text NOT NULL,
+  `address` text NOT NULL,
+  `md5` varchar(35) NOT NULL,
+  `active` tinyint(4) NOT NULL,
+  `activedate` datetime NOT NULL,
+  `user_disable` tinyint(4) NOT NULL,
+  `gid` int(11) NOT NULL,
+  PRIMARY KEY  (`Email`,`gid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- 列出以下資料庫的數據： `subscription_user`
+-- 
+
+INSERT INTO `subscription_user` VALUES ('許功蓋', 'xnm62dsfsd018@msgdb.ffmailslite.com', '', '', '442e067f88e044e9735966660d87f887', 1, '2012-03-31 00:54:00', 0, 1);
+INSERT INTO `subscription_user` VALUES ('dfdfggerer', 'uaecloug@guerrillamailblock.com', '', '', 'cb424aa87733d1e9f888e7442b41e44d', 0, '2012-03-30 00:24:28', 0, 2);
+
+
+-- --------------------------------------------------------
+
+-- 
+-- 資料表格式： `users`
+-- 
+
+CREATE TABLE `users` (
+  `uname` varchar(50) NOT NULL,
+  `passwd` varchar(50) NOT NULL,
+  PRIMARY KEY  (`uname`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- 列出以下資料庫的數據： `users`
+-- 
+
+INSERT INTO `users` VALUES ('admin', '1234');

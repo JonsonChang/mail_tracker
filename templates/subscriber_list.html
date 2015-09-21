@@ -1,0 +1,71 @@
+<{include file="header.html"}>
+
+ 	<script type="text/javascript">
+		$(document).ready(function() {
+<{section name=loop loop=$subscriber_list}>
+			$("#<{$subscriber_list[loop].md5}>").fancybox({
+				'width'				: '75%',
+				'height'			: '75%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+<{/section}> 
+	
+		});
+	</script>
+
+       	<div id="Layer">您的位置是：訂閱者名單</div>
+        <div id="Time"> </div>
+       
+        <!-- 內容區 Start-->
+       
+ <div id="tab">
+        	<div class="title">&middot; 訂閱者名單</div>
+            <div class="btn2">
+           
+            <input name='button3' type='submit' class='button3' id='button3' onclick="location.href='subscriber_list.php?op=1'" value='新增訂閱者' />
+
+            </div>
+<form action="aboutus.php?op=1" method="post">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+	<th width="5%">編號</th>
+    <th width="10%">通過時間</th>
+	<th width="20%">名稱</th>
+	<th width="30%">mail</th>
+	<th width="5%">啟用</th>
+	<th width="10%">使用者停止</th>
+	<th width="10%">修改</th>
+    <th width="10%">刪除</th>
+  </tr>
+
+<{section name=loop loop=$subscriber_list}>
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+	<td><{$smarty.section.loop.index+1}> </td>
+    <td><{$subscriber_list[loop].activedate}> </td>
+    <td><p align="left"><a id="<{$subscriber_list[loop].md5}>" href="alreadysend_list.php?mail=<{$subscriber_list[loop].Email}>"><{$subscriber_list[loop].name}></a></p> </td>
+	<td>
+		<p align="left"><{$subscriber_list[loop].Email}></p> 
+		<{ if $subscriber_list[loop].address != ""}><p align="left">地址：<{$subscriber_list[loop].address}></p><{ /if}>
+		<{ if $subscriber_list[loop].blog != ""}><p align="left">blog：<a href="<{$subscriber_list[loop].blog}>" target="_blank"><{$subscriber_list[loop].blog}></a></p><{/if}>
+	</td>
+	<td><{$subscriber_list[loop].active}> </td>
+	<td><{$subscriber_list[loop].user_disable}></td>
+	<td><input name='button2' type='button' class='button3'  onclick="location.href='subscriber_list.php?op=4&id=<{$subscriber_list[loop].Email}>'" value='修改'  title="<{$category_list[loop].name}>"/> </td>
+	<td><input name='button3' type='button' class='button3'  onclick="location.href='subscriber_list.php?op=3&id=<{$subscriber_list[loop].Email}>'" value='刪除'  title="<{$category_list[loop].name}>"/> </td>
+  </tr>
+<{/section}> 
+  <tr>
+
+    <th class="tabfooter" colspan="6" style="border-left:0px;"> 
+<!--      
+		<input type="submit" value="送出" />
+ -->
+    </th>
+    </tr>
+</table>
+</form>  
+<{include file="footer.html"}>

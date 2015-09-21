@@ -1,0 +1,46 @@
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+   <!-- <th width="5%" style="border-left:0px;">勾 選</th>-->
+    <th width="8%">序 號</th>
+    <th>姓 名</th>
+    <th>帳 號</th>
+
+    <th>狀 態  </th>
+    <th width="15%">功 能</th>
+  </tr>
+  
+
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   
+    <td>1</td>
+    <td>林英彥</td>
+    <td>waterelf</td>
+
+    <td>
+     開啟</td>
+    <td>
+      <input name='aaa' type='button' id='aaa' onclick="updatethis('1')" value='修改' />
+      <input name="bbb" type="button" id="bbb" onclick="checkdel('1')" value="刪除" />
+    </td>
+  </tr>
+<form id="fp" name="fp" method="post" action="default.php?funitemid=1&do=1">
+  <tr>
+
+    <th class="tabfooter" colspan="6" style="border-left:0px;">-- 1 / 1 頁 共1筆資料 -- <br/>跳頁
+    
+    <select name="page" onchange="Javascript:fp.submit()">
+<option value='1'>1</option>
+  </select>
+   </form>   
+ 
+    </th>
+    </tr>
+</table>
+        
+
+
+        <!-- 內容區 End-->
+
+  

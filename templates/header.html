@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>後台管理系統</title>
+<link href="css/admin.css" rel="stylesheet" type="text/css" />
+<link href="css/menu_bule.css" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript" src="./scripts/jquery.min.js"></script>
+<script type="text/javascript" src="./scripts/jquery.form.js"></script>
+<script type="text/javascript" src="./scripts/myfunction.js"></script>
+
+<script type="text/javascript" src="./include/ckeditor/ckeditor.js"></script>
+<!-- calender -->
+  <link rel="stylesheet" type="text/css" href="./include/JSCal2-1.8/src/css/jscal2.css" />
+  <link rel="stylesheet" type="text/css" href="./include/JSCal2-1.8/src/css/win2k/win2k.css" />
+	
+    <script type="text/javascript" src="./include/JSCal2-1.8/src/js/jscal2.js"></script>
+    <script type="text/javascript" src="./include/JSCal2-1.8/src/js/lang/cn.js"></script>
+
+<!--fancybox-->
+	<script type="text/javascript" src="./include/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="./include/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="./include/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+ 	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$("#various3").fancybox({
+				'width'				: '75%',
+				'height'			: '75%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+		});
+	</script>
+
+</head>
+
+
+<body>
+<div id="All">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="189px" align="left" valign="top">
+
+    <div id="Left">
+		<div id="Logo">
+        	<div class="CompanyLogo"><img src="images/Logo.png" /></div>
+            <div class="MS"><b>公司管理平台</b></div>
+        </div>
+        <div id="Name">網站管理後台</div>
+        <!--網站名稱12字為限-->
+        <!--Menu Start-->
+
+        <ul id="Menu">
+
+<li>
+<a href='group.php' class='m1' onmouseover=this.className='m2' onmouseout=this.className='m1' >群組設定</a>
+</li>
+
+<a href='checkmail.php' class='m1' onmouseover=this.className='m2' onmouseout=this.className='m1' >確認Mail</a>
+</li>
+<li>
+<a href='blog_list.php' class='m1' onmouseover=this.className='m2' onmouseout=this.className='m1' >文章列表</a>
+</li>
+<li>
+<a href='subscriber_list.php' class='m1' onmouseover=this.className='m2' onmouseout=this.className='m1' >訂閱名單</a>
+</li>
+
+<li>
+<a href='mailall.php' class='m1' onmouseover=this.className='m2' onmouseout=this.className='m1' >全部發信</a>
+</li>
+ 
+<li>
+<a href='showscript.php' class='m1' onmouseover=this.className='m2' onmouseout=this.className='m1' target="_blank" >顯示語法</a>
+</li> 
+        </ul>
+
+        <!--Menu End-->
+        <div id="Bottom"></div>
+     </div>    </td>
+    <td align="left" valign="top">
+    	    <div id="Main">
+        <p class="Welcome"><{$no}></p>
+			<div class="btn"><input name="" type="button" value="登出" title="登出管理平台" onclick="location.href='index.php'"/>
+			<input name="" type="button" value="前台預覽" title="前台預覽" onclick="window.open('../index.php')"/>
+			群組名稱：<{$curr_group_name}>
+		</div>
+       
+

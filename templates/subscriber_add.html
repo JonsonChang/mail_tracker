@@ -1,0 +1,83 @@
+<{include file="header.html"}>
+
+       	<div id="Layer">您的位置是：新增訂閱者</div>
+        <div id="Time"> </div>
+       
+        <!-- 內容區 Start-->
+       
+ <div id="tab">
+        	<div class="title">&middot; 新增訂閱者</div>
+            <div class="btn2">
+<!--           
+            <input name='button3' type='submit' class='button3' id='button3' onclick="location.href='news_add.php'" value='新增最新消息' />
+-->
+            </div>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+   
+    <th width="15%">項目</th>
+	<th width="85%">名稱：</th>
+    
+  </tr>
+
+<form action="subscriber_list.php?op=2" method="post">  
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   姓名：
+   </td>
+    <td>
+		<p align="left">
+			<input name="name" type="text" id="name" size="20" maxlength="20" />
+		</p>
+	</td>
+
+  </tr>
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   E-mail:
+   </td>
+    <td>
+		<p align="left">
+			<input name="email" type="text" id="email" size="50" maxlength="60" />
+		</p>
+	</td>
+  </tr>
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   啟用
+   </td>
+    <td>
+		<p align="left">
+			  <input name="active" type="checkbox" id="active" value="1"  />
+		</p>
+	</td>
+  </tr>
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   使用者取消
+   </td>
+      <td>
+		<p align="left">
+			  <input name="user_disable" type="checkbox" id="user_disable" value="1"  />
+		</p>
+	</td>
+
+  </tr>  
+
+
+
+
+  <tr>
+
+    <th class="tabfooter" colspan="6" style="border-left:0px;"> 
+      
+		<input type="submit" value="送出" title="送出" />
+ 
+    </th>
+    </tr>
+	</form>  
+</table>
+
+<{include file="footer.html"}>

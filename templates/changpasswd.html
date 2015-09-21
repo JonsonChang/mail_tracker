@@ -1,0 +1,72 @@
+<{include file="header.html"}>
+
+
+       	<div id="Layer">您的位置是：變更密碼</div>
+        <div id="Time"> </div>
+       
+        <!-- 內容區 Start-->
+       
+ <div id="tab">
+        	<div class="title">&middot; 變更密碼</div>
+            <div class="btn2">
+<!--           
+            <input name='button3' type='submit' class='button3' id='button3' onclick="location.href='news_add.php'" value='新增最新消息' />
+-->
+            </div>
+<form action="changpasswd.php?op=1" method="post">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+   
+    <th width="15%">項目</th>
+	<th width="85%">內容</th>
+    
+  </tr>
+     <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+  
+   </td>
+    <td>
+		<p align="left">
+			<font size="4" color="red"><{$message}></font>
+		</p>
+	</td>
+
+  </tr>
+
+   <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   密碼：
+   </td>
+    <td>
+		<p align="left">
+			<input name="passwd" type="password" id="passwd" size="50" maxlength="60" />
+		</p>
+	</td>
+
+  </tr>
+
+
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   確認密碼：
+   </td>
+    <td>
+		<p align="left">
+			<input name="passwd2" type="password" id="passwd2" size="50" maxlength="60" />
+		</p>
+	</td>
+
+  </tr>
+
+  <tr>
+
+    <th class="tabfooter" colspan="6" style="border-left:0px;"> 
+      
+		<input type="submit" value="送出" title="送出" />
+ 
+    </th>
+    </tr>
+</table>
+</form>  
+<{include file="footer.html"}>

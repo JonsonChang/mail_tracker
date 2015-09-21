@@ -1,0 +1,196 @@
+<{include file="header.html"}>
+<script>
+$(function(){
+	init_group();
+});
+</script>
+
+       	<div id="Layer">您的位置是：群組設定</div>
+        <div id="Time"> </div>
+       
+        <!-- 內容區 Start-->
+       
+ <div id="tab">
+        	<div class="title">&middot; 群組設定</div>
+            <div class="btn2">
+            </div>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+   
+    <th width="15%">項目</th>
+	<th width="85%">內容</th>
+    
+  </tr>
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+  
+   </td>
+    <td>
+		<p align="left">
+			<font size="4" color="red"><{$message}></font>
+		</p>
+	</td>
+
+  </tr>
+
+
+<{section name=loop loop=$group_list}>
+	<tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+		<td>
+		<{$group_list[loop].gname}>
+		</td>
+		<td>
+			<p align="left">
+			<button type="button" id='group_select' value="<{$group_list[loop].id}>" alt="<{$group_list[loop].gname}>">使用</button>
+			<button type="button" id='group_edit' value="<{$group_list[loop].id}>" alt="<{$group_list[loop].gname}>">修改</button>
+			<button type="button" id='group_del' value="<{$group_list[loop].id}>" alt="<{$group_list[loop].gname}>">刪除</button>
+			id:<{$group_list[loop].id}> | 人數:<{$group_list[loop].usercount}> | 文章數：<{$group_list[loop].articlecount}>
+			</p>
+		</td>
+  </tr>    
+<{/section}> 
+  
+  <tr>
+    <th class="tabfooter" colspan="6" style="border-left:0px;"> 
+		<!--input type="submit" value="送出" title="送出" /-->
+    </th>
+    </tr>
+</table>
+<form id='group_form' action="system.php?op=1" method="post">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+   
+    <th width="15%">項目</th>
+	<th width="85%">內容</th>
+    
+  </tr>
+     <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+  
+   </td>
+    <td>
+		<p align="left">
+			<font size="4" color="red"></font>
+		</p>
+	</td>
+  </tr>
+	
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   名稱
+   </td>
+    <td>
+		<p align="left">
+			<input name="gname" type="text" id="gname" size="70" maxlength="180" value="<{$gname}>"/>
+			<input type="text" name='gid' id='gid' value="" readonly>
+		</p>
+	</td>
+  </tr>
+
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   SMTP server:
+   </td>
+    <td>
+		<p align="left">
+			<input name="SMTP_Host" type="text" id="SMTP_Host" size="100" maxlength="180" value="<{$SMTP_Host}>"/>
+		</p>
+	</td>
+
+  </tr>
+
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   帳號:
+   </td>
+    <td>
+		<p align="left">
+			<input name="SMTP_user_account" type="text" id="SMTP_user_account" size="100" maxlength="180" value="<{$SMTP_user_account}>"/>
+		</p>
+	</td>
+
+  </tr>
+
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   密碼:
+   </td>
+    <td>
+		<p align="left">
+			<input name="SMTP_Password" type="text" id="SMTP_Password" size="100" maxlength="180" value=""/>
+		</p>
+	</td>
+
+  </tr>
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   ssl:
+   </td>
+    <td>
+		<p align="left">
+			<input name="SMTP_ssl" type="text" id="SMTP_ssl" size="10" maxlength="180" value=""/> 大於1，使用ssl
+		</p>
+	</td>
+
+  </tr>
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   顯示名稱:
+   </td>
+    <td>
+		<p align="left">
+			<input name="SMTP_username" type="text" id="SMTP_username" size="100" maxlength="180" value=""/>
+		</p>
+	</td>
+
+  </tr>  
+
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   回信mail:
+   </td>
+    <td>
+		<p align="left">
+			<input name="SMTP_ReplyMail" type="text" id="SMTP_ReplyMail" size="100" maxlength="180" value="<{$SMTP_ReplyMail}>"/>
+		</p>
+	</td>
+
+  </tr>    
+
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   認證說明rul:
+   </td>
+    <td>
+		<p align="left">
+			<input name="desc_url" type="text" id="desc_url" size="100" maxlength="180" value=""/>
+		</p>
+	</td>
+  </tr>  
+  
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+   <td>
+   認證成功rul:
+   </td>
+    <td>
+		<p align="left">
+			<input name="success_url" type="text" id="success_url" size="100" maxlength="180" value=""/>
+		</p>
+	</td>
+  </tr>  
+  
+  <tr>
+
+    <th class="tabfooter" colspan="6" style="border-left:0px;"> 
+		<button type="button" id='group_deltail_edit' value="">修改</button>
+		<button type="button" id='group_deltail_add' value="">新增</button>
+    </th>
+    </tr>
+</table>
+</form>  
+<{include file="footer.html"}>

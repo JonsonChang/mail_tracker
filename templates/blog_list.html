@@ -1,0 +1,46 @@
+<{include file="header.html"}>
+
+
+       	<div id="Layer">您的位置是：文章列表</div>
+        <div id="Time"> </div>
+       
+        <!-- 內容區 Start-->
+       
+ <div id="tab">
+        	<div class="title">&middot; 文章列表</div>
+            <div class="btn2">
+           
+            <input name='button3' type='submit' class='button3' id='button3' onclick="location.href='blog_list.php?op=1&catid=<{$catid}>'" value='新增文章' />
+
+            </div>
+<form action="aboutus.php?op=1" method="post">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+    <th width="20%">發信時間</th>
+	<th width="10%">啟用</th>
+	<th width="50%">主題</th>
+	<th width="10%">修改</th>
+    <th width="10%">刪除</th>
+  </tr>
+
+<{section name=loop loop=$category_list}>
+  <tr class="tr" onmouseover="this.className='trover'" onmouseout="this.className='tr'" >
+    <td><{$category_list[loop].sendday}> </td>
+	<td><p><{$category_list[loop].active}></p> </td>
+    <td><p align="left"><{$category_list[loop].title}></p> </td>
+	<td><input name='button2' type='button' class='button3'  onclick="location.href='blog_list.php?op=4&id=<{$category_list[loop].id}>'" value='修改'  title="<{$category_list[loop].name}>"/> </td>
+	<td><input name='button3' type='button' class='button3'  onclick="location.href='blog_list.php?op=3&id=<{$category_list[loop].id}>'" value='刪除'  title="<{$category_list[loop].name}>"/> </td>
+  </tr>
+<{/section}> 
+  <tr>
+
+    <th class="tabfooter" colspan="6" style="border-left:0px;"> 
+<!--      
+		<input type="submit" value="送出" />
+ -->
+    </th>
+    </tr>
+</table>
+</form>  
+<{include file="footer.html"}>
